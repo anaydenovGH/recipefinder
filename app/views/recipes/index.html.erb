@@ -1,7 +1,17 @@
 <div class="container">
-	<%= form_tag recipes_index_path, method: :get, id: 'search' do %>
-		<%= label_tag :name %>
-		<%= text_field_tag :name , '', placeholder: 'Enter what you\' hungry for' , :required => true %>
-		<%= submit_tag "Search", class: 'btn btn-success' %>
-	<% end %>
+	<div>
+		<h2>Search for a recipe today!</h2>
+		<p>Search up your favorite recipe, just put input the ingredients you want in it(commas between ingredients!) and voila!</p>
+	</div>
+	<div class="search container">
+		<%= form_tag recipes_index_path, method: :get, id: 'search' do %>
+			<%= label_tag :name %>
+			<%= text_field_tag :name , '', placeholder: 'Enter what you\' hungry for' , :required => true %>
+			<%= submit_tag "Search", class: 'btn btn-success' %>
+		<% end %>
+	</div>
+
+	<div class="results">
+		
+	</div>
 </div>
