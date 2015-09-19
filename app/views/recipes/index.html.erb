@@ -5,13 +5,32 @@
 	</div>
 	<div class="search container">
 		<%= form_tag recipes_index_path, method: :get, id: 'search' do %>
-			<%= label_tag :name %>
-			<%= text_field_tag :name , '', placeholder: 'Enter what you\' hungry for' , :required => true %>
+			<%= label_tag :ingredient %>
+			<%= text_field_tag :ingred , '', placeholder: 'Enter what you\' hungry for' , :required => true %>
 			<%= submit_tag "Search", class: 'btn btn-success' %>
 		<% end %>
 	</div>
 
+	<% unless params[:ingred].nil? %>
 	<div class="results">
-		
+		<h2>Results for <%= params[:ingred] %></h2>
+		<table border="1">
+		  <tr>
+		  	<th>Image</th>
+		  	<th>Name</th>
+		  	<th>Description</th>
+		  </tr>
+		  <% @recipes.each do |recipe| %>
+		    <!--
+		    <tr class=<%= cycle('even', 'odd') %>>
+		      <td><%= image_tag(course["smallIcon"])%></td>
+		      <td><%= course["name"] %></td>
+		      <td><%= course["shortDescription"] %></td>
+		    </tr>
+		    -->
+		  <% end %>
+		</table>
+
 	</div>
+	<% end %>
 </div>
