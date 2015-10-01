@@ -24,7 +24,7 @@
 		    <tr class=<%= cycle('even', 'odd') %>>
 		      <td><%= image_tag(recipe["image_url"])%></td>
 		      <td><%= recipe["title"] %></td>
-		      <td><%= recipe["social_rank"] %></td>
+		      <td><%= sprintf '%.2f', recipe["social_rank"] %></td>
 		    </tr>
 		  <% end %>
 		</table>
