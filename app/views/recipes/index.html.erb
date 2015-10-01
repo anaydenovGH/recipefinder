@@ -16,15 +16,15 @@
 		<h2>Results for <%= params[:ingred] %>(<%= @recipes.count %>)</h2>
 		<table border="1">
 		  <tr>
-		  	<th>Image</th>
-		  	<th>Name</th>
-		  	<th>Description</th>
+		  	<th>Thumbnail</th>
+		  	<th>Title</th>
+		  	<th>Social Rank</th>
 		  </tr>
 		  <% @recipes.each do |recipe| %>
-		    <tr class=<%= #cycle('even', 'odd') %>>
-		      <td><%= #image_tag(course["smallIcon"])%></td>
-		      <td><%= #course["name"] %></td>
-		      <td><%= #course["shortDescription"] %></td>
+		    <tr class=<%= cycle('even', 'odd') %>>
+		      <td><%= image_tag(recipe["image_url"])%></td>
+		      <td><%= recipe["title"] %></td>
+		      <td><%= recipe["social_rank"] %></td>
 		    </tr>
 		  <% end %>
 		</table>
