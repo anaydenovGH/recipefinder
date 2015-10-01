@@ -13,7 +13,7 @@
 
 	<% unless params[:ingred].nil? %>
 	<div class="results">
-		<h2>Results for <%= params[:ingred] %></h2>
+		<h2>Results for <%= params[:ingred] %>(<%= @recipes.count %>)</h2>
 		<table border="1">
 		  <tr>
 		  	<th>Image</th>
@@ -21,13 +21,11 @@
 		  	<th>Description</th>
 		  </tr>
 		  <% @recipes.each do |recipe| %>
-		    <!--
-		    <tr class=<%= cycle('even', 'odd') %>>
-		      <td><%= image_tag(course["smallIcon"])%></td>
-		      <td><%= course["name"] %></td>
-		      <td><%= course["shortDescription"] %></td>
+		    <tr class=<%= #cycle('even', 'odd') %>>
+		      <td><%= #image_tag(course["smallIcon"])%></td>
+		      <td><%= #course["name"] %></td>
+		      <td><%= #course["shortDescription"] %></td>
 		    </tr>
-		    -->
 		  <% end %>
 		</table>
 
