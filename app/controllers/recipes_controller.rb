@@ -1,9 +1,9 @@
 class RecipesController < ApplicationController
   def index
-  	if !params[:ingred].nil?
+  	if !params[:search].nil?
   	else
-  		params[:ingred] = "chocolate"
+  		params[:search] = "chocolate"
   	end
-  	@recipes = Recipe.for(params[:ingred])
+  	@recipes = Recipe.for(params[:search])
   end
 end
